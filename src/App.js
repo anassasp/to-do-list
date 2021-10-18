@@ -38,6 +38,7 @@ class App extends React.Component {
 
   handleCheck(event){
     const id = Number(event.target.value);
+    console.log(event);
 
     this.setState(state => ({
       toDoList: state.toDoList.map(item => item.id === id? { ...item, checked: !item.checked}: item)

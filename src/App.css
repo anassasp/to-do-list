@@ -103,7 +103,7 @@
 }
 
 .btn:hover {
-  opacity: 0;
+  opacity: .75;
 }
 
 @media (max-width: 800px){

@@ -37,7 +37,11 @@ const ListRow = (props) => {
 const EditRow = (props) => {
 	const item = props.row;
 	return(
-		<li className="list-row-show" key={item.id}>
+		<li 
+			className={props.checkInput === "all"? "list-row-show":
+			props.checkInput === "finished"? item.checked? "list-row-show": "list-row-hide":
+			props.checkInput === "unfinished"? item.checked? "list-row-hide": "list-row-show": ""}
+			key={item.id}>
 			<div className="list-content">
 				<input 
 					className="list-edit" 
@@ -64,6 +68,7 @@ const EditRow = (props) => {
 }
 
 const List = (props) => {
+	console.log(props.checkInput)
 	const [arrId, setArrId] = useState([]);
 	const [desc, setDesc] = useState('');
 
@@ -98,7 +103,8 @@ const List = (props) => {
 						checkInput={props.checkInput}
 						editDesc={props.editDesc}
 						addEditList={addEditList} 
-						deleteList={props.deleteList} />
+						deleteList={props.deleteList}
+						handleCheck={props.handleCheck} />
 					)}
 					{props.children}
 				</ul>
