@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.list-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.show-option {
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.list-body {
+  width: 100%;
+}
+
+.card {
   display: flex;
   flex-direction: column;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 0 0 5px 5px;
+}
+
+.card .list-header {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.card .card-body {
+  list-style: none;
+  padding: 0;
+}
+
+.card .card-body .list-row-show {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 4px 0;
+  margin: 6px 0;
+  border-bottom: 2px solid #ddd;
 }
 
-.App-link {
-  color: #61dafb;
+.card .card-body .list-row-hide {
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.list-header {
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px 5px 0 0;
+}
+
+.list-header .header {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.list-header .header .header-color {
+  background-color: red;
+  color: #fff;
+  font-style: oblique;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+.list-content {
+  position: relative;
+  width: 100%;
+}
+
+.list-edit {
+  width: 85%;
+}
+
+.list-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 5px; 
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: #0069d9;
+  border: 1px solid #0062cc;
+}
+
+.btn-delete {
+  background-color: #c82333;
+  border: 1px solid #bd2130;
+}
+
+.btn:hover {
+  opacity: 0;
+}
+
+@media (max-width: 800px){
+  .list-container {
+    width: 60%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 500px){
+  .list-container {
+    width: 90%;
   }
 }
